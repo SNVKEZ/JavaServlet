@@ -24,7 +24,7 @@
                     <label>Name:
                         <input type="name" name="name"><br />
                     </label>
-                    <label>Mean mark:
+                    <label>Avarage score:
                         <input type="mean" name="mean"><br />
                     </label>
                     <label>Blockchain:
