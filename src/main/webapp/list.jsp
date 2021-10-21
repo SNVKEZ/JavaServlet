@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Students</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
 
     <body>

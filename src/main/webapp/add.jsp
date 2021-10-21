@@ -1,7 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add new student</title>
+<link rel="stylesheet" href="styles.css" />
     </head>
 
     <body>
