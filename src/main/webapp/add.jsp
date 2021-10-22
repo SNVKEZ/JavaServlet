@@ -8,14 +8,19 @@
 
     <body>
         <div>
-            <h1>Task1</h1>
+            <h1>Servlet</h1>
         </div>
 
         <div>
             <%
-                if (request.getAttribute("userName") != null) {
+                if (request.getAttribute("userName") != null && request.getAttribute("error")==null ){
                     out.println("<p>User '" + request.getAttribute("userName") + "' added!</p>");
                 }
+            %>
+            <%
+            if(request.getAttribute("error")!=null){
+            out.println("<p> User not added");
+            }
             %>
             <div>
                 <div>

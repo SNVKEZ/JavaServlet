@@ -22,6 +22,7 @@ public class AddServlet extends HttpServlet {
         String mean = req.getParameter("mean");
         String chain = req.getParameter("chain");
         Double mark;
+
         if (Double.parseDouble(mean) > 0 && Double.parseDouble(mean) <= 5){
             mark = Double.parseDouble(mean);
         }
@@ -30,7 +31,11 @@ public class AddServlet extends HttpServlet {
         }
         Student student = new Student(name, mark, Boolean.parseBoolean(chain));
         SpisokStud spstud = SpisokStud.getInstance();
-        SpisokStud.nwStd(student);
+        try {
+            SpisokStud.nwStd(student);
+        }catch (Exception e){
+            req.setAttribute("error", e.getMessage());
+        }
 
         req.setAttribute("userName", name);
         doGet(req, resp);

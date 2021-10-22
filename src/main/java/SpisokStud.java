@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+
 public class SpisokStud {
     public static SpisokStud instance = new SpisokStud();
     public static SpisokStud getInstance(){
@@ -8,6 +9,8 @@ public class SpisokStud {
     }
     public String i;
     public static ArrayList<Student> spisok;
+
+
 
     public SpisokStud() {
         spisok = new ArrayList<>();
@@ -20,10 +23,21 @@ public class SpisokStud {
         spisok.add(new Student("Котума Андрей", 4.25, true));
     }
 
-    static void nwStd(Student student)
+    public static void nwStd(Student student)
     {
+        if (student.avarage_score<1 || student.avarage_score>5)
+        {
+            throw new RuntimeException("invalid avar score");
+        }
+
+        if (spisok.contains(student)){
+            throw new RuntimeException("student in list");
+        }
+
         spisok.add(student);
     }
+
+
 
     public ArrayList<String> chkStd() {
         return (ArrayList<String>) spisok.stream()

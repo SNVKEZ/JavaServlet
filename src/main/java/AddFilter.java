@@ -24,7 +24,7 @@ public class AddFilter implements Filter {
         if (filterConfig.getInitParameter("active").equalsIgnoreCase("true")){
             HttpServletRequest req = (HttpServletRequest)request;
             mark = request.getParameter("mean");
-            if (Double.parseDouble(mark) > 0){
+            if (Double.parseDouble(mark) > 0 && Double.parseDouble(mark)<=5){
                 chain.doFilter(request, response);
                 return;
             } else{
